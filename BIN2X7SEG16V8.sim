@@ -1,0 +1,96 @@
+%SIGNAL
+PIN   1 =  DA 
+PIN   2 =  DB 
+PIN   3 =  DC 
+PIN   4 =  DD 
+PIN   5 =  DE 
+PIN   6 =  DF 
+PIN   7 =  DG 
+PIN   8 =  DH 
+PIN   9 =  LOHI 
+PIN  19 =  a 
+PIN  18 =  b 
+PIN  17 =  c 
+PIN  16 =  d 
+PIN  15 =  e 
+PIN  14 =  f 
+PIN  13 =  g 
+PIN  12 =  sel 
+%END
+
+%FIELD
+FIELD INPUT = LOHI,DA,DB,DC,DD,DE,DF,DG,DH
+FIELD OUTPUT = a,b,c,d,e,f,g,sel
+%END
+
+%EQUATION
+a =>
+    DA & DB & !DC & DD & !LOHI
+  # !DE & !DF & !DG & DH & LOHI
+  # !DE & DF & !DG & !DH & LOHI
+  # DE & !DF & DG & DH & LOHI
+  # DE & DF & !DG & DH & LOHI
+  # !DA & !DB & !DC & DD & !LOHI
+  # !DA & DB & !DC & !DD & !LOHI
+  # DA & !DB & DC & DD & !LOHI
+
+b =>
+    DA & DB & !DC & !DD & !LOHI
+  # !DE & DF & !DG & DH & LOHI
+  # DF & DG & !DH & LOHI
+  # DE & DG & DH & LOHI
+  # DE & DF & !DG & !DH & LOHI
+  # !DA & DB & !DC & DD & !LOHI
+  # DB & DC & !DD & !LOHI
+  # DA & DC & DD & !LOHI
+
+c =>
+    DA & DB & DC & DD & !LOHI
+  # !DE & !DF & DG & !DH & LOHI
+  # DE & DF & !DH & LOHI
+  # DE & DF & DG & DH & LOHI
+  # !DA & !DB & DC & !DD & !LOHI
+  # DA & DB & !DD & !LOHI
+
+d =>
+    DA & !DB & DC & !DD & !LOHI
+  # !DF & !DG & DH & LOHI
+  # !DE & DF & !DG & !DH & LOHI
+  # DF & DG & DH & LOHI
+  # DE & !DF & DG & !DH & LOHI
+  # !DB & !DC & DD & !LOHI
+  # !DA & DB & !DC & !DD & !LOHI
+  # DB & DC & DD & !LOHI
+
+e =>
+    DA & !DB & !DC & DD & !LOHI
+  # !DE & !DF & DH & LOHI
+  # !DE & DF & !DG & LOHI
+  # !DE & DF & DG & DH & LOHI
+  # DE & !DF & !DG & DH & LOHI
+  # !DA & !DB & DD & !LOHI
+  # !DA & DB & !DC & !LOHI
+  # !DA & DB & DC & DD & !LOHI
+
+f =>
+    DA & DB & !DC & DD & !LOHI
+  # !DE & !DF & DH & LOHI
+  # !DE & !DF & DG & !DH & LOHI
+  # !DE & DF & DG & DH & LOHI
+  # DE & DF & !DG & DH & LOHI
+  # !DA & !DB & DD & !LOHI
+  # !DA & !DB & DC & !DD & !LOHI
+  # !DA & DB & DC & DD & !LOHI
+
+g =>
+    !DE & !DF & !DG & LOHI
+  # DA & DB & !DC & !DD & !LOHI
+  # !DE & DF & DG & DH & LOHI
+  # DE & DF & !DG & !DH & LOHI
+  # !DA & !DB & !DC & !LOHI
+  # !DA & DB & DC & DD & !LOHI
+
+sel =>
+    !LOHI
+
+%END

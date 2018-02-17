@@ -1,0 +1,74 @@
+Name       bin2x7seg;
+Partno     XXXXX;
+Date       15-Feb-2018;
+Revision   01;
+Designer   N. Kendrick;
+Company    Techmarque;
+Assembly   XXXXX;
+Location   XXXXX;
+Device     g16v8a;
+/******************************************************************/
+/* This program takes an 8-bit HEX number input and outputs       */
+/* the necessary signals to drive a pair of 7 - segment displays  */
+/*                                                                */
+/******************************************************************/
+/*  Allowable Target Device Types:                                */
+/******************************************************************/
+/**  Inputs  **/
+Pin 1 = DA;      /*  lsb of hex input  */
+Pin 2 = DB;      /*                    */
+Pin 3 = DC;      /*                    */
+Pin 4 = DD;      /*                    */
+Pin 5 = DE;      /*                    */
+Pin 6 = DF;      /*                    */
+Pin 7 = DG;      /*                    */
+Pin 8 = DH;      /*  msb of hex input  */
+Pin 9 = LOHI;
+/**  Outputs  **/
+Pin 19 = a;      /*  Output Segments for 7-segment Display  */
+Pin 18 = b;      /*                                */
+Pin 17 = c;      /*                                */
+Pin 16 = d;      /*                                */
+Pin 15 = e;      /*                                */
+Pin 14 = f;      /*                                */
+Pin 13 = g;      /*                                */
+Pin 12 = sel;
+
+
+/**  Logic Equations  **/
+FIELD INPUT = [LOHI,DA,DB,DC,DD,DE,DF,DG,DH];  /* Defines input array    */
+FIELD OUTPUT = [a,b,c,d,e,f,g,sel]; /* Defines output array */
+TABLE INPUT => OUTPUT {
+'b'1XXXX0000 => 'b'00000010;
+'b'1XXXX0001 => 'b'10011110;
+'b'1XXXX0010 => 'b'00100100;
+'b'1XXXX0011 => 'b'00001100;
+'b'1XXXX0100 => 'b'10011000;
+'b'1XXXX0101 => 'b'01001000;
+'b'1XXXX0110 => 'b'01000000;
+'b'1XXXX0111 => 'b'00011110;
+'b'1XXXX1000 => 'b'00000000;
+'b'1XXXX1001 => 'b'00011000;
+'b'1XXXX1010 => 'b'00010000;
+'b'1XXXX1011 => 'b'11000000;
+'b'1XXXX1100 => 'b'01100010;
+'b'1XXXX1101 => 'b'10000100;
+'b'1XXXX1110 => 'b'01100000;
+'b'1XXXX1111 => 'b'01110000;
+'b'00000XXXX => 'b'00000011;
+'b'00001XXXX => 'b'10011111;
+'b'00010XXXX => 'b'00100101;
+'b'00011XXXX => 'b'00001101;
+'b'00100XXXX => 'b'10011001;
+'b'00101XXXX => 'b'01001001;
+'b'00110XXXX => 'b'01000001;
+'b'00111XXXX => 'b'00011111;
+'b'01000XXXX => 'b'00000001;
+'b'01001XXXX => 'b'00011001;
+'b'01010XXXX => 'b'00010001;
+'b'01011XXXX => 'b'11000001;
+'b'01100XXXX => 'b'01100011;
+'b'01101XXXX => 'b'10000101;
+'b'01110XXXX => 'b'01100001;
+'b'01111XXXX => 'b'01110001;
+}
