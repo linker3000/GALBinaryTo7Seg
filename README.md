@@ -20,10 +20,10 @@ You will also need a GAL programmer (the TL866 can do it - that's what I use). U
 
 The general wiring is as follows (you can extrapolate from the .PLD file too - it's  plain text file with more info)..
 
-The 8-bit binary is input on GAL pins 1-8 (5V TTL level)
-The clock that toggles the PNP transistors is input on pin 9. 
-An inverse of this clock is output from pin 12.
-The 7 segment outputs (in standard nomenclature for segments a-g) are output from pins 19 back to 13
+* The 8-bit binary is input on GAL pins 1-8 (5V TTL level)
+* The clock that toggles the PNP transistors is input on pin 9. 
+* An inverse of this clock is output from pin 12.
+* The 7 segment outputs (in standard nomenclature for segments a-g) are output from pins 19 back to 13
 
 * Wire the display connections in parallel (a to a, b to b etc.) as only one is on at a time.
 * Connect the 7 segment display paired wiring to GAL pins 19-13 through 390 ohm resistors. 
@@ -31,10 +31,10 @@ The 7 segment outputs (in standard nomenclature for segments a-g) are output fro
 * Connect (via 1K8 resistors), one transistor base to the same GAL pin as the input clock (pin 9), the other to pin 12 - this means the transistors are driven on alternately.
 * Connect the capacitor across the GAL supply rails, as close to the chip as possible.
 
-If when you wire everything up the hex digits are the wrong way round, transpose the base connections to the GAL.
+*If when you wire everything up the hex digits are the wrong way round, transpose the base connections to the GAL.*
 
-Optional extra - 74LS373
+**Optional extra - 74LS373**
 
-If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip will free-run (no clock needed), but will freeze its output when pin 11 ('C') is taken low - so you can use this as a trigger to helt the display if you need to check a value at a specific time.
+If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip will free-run (no clock needed), but will freeze its output when pin 11 ('C') is taken low - so you can use this as a trigger to halt the display if you need to check a value at a specific time.
 
 A schematic will follow shortly.
