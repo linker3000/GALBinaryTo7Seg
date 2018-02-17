@@ -15,14 +15,14 @@ Device     g16v8a;
 /*  Allowable Target Device Types:                                */
 /******************************************************************/
 /**  Inputs  **/
-Pin 1 = DA;      /*  lsb of hex input  */
+Pin 1 = DA;      /*  MSB of hex input  */
 Pin 2 = DB;      /*                    */
 Pin 3 = DC;      /*                    */
 Pin 4 = DD;      /*                    */
 Pin 5 = DE;      /*                    */
 Pin 6 = DF;      /*                    */
 Pin 7 = DG;      /*                    */
-Pin 8 = DH;      /*  msb of hex input  */
+Pin 8 = DH;      /*  LSB of hex input  */
 Pin 9 = LOHI;
 /**  Outputs  **/
 Pin 19 = a;      /*  Output Segments for 7-segment Display  */
