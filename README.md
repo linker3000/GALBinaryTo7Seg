@@ -7,14 +7,14 @@ This CUPL code programs a GAL16V8 to drive two COMMON ANODE 7 segment displays s
 
 There is support circuitry needed to make the whole unit and a schematic and further instructions will be posted later, but in summary (in case you want to work it out for yourself!), you will need:
 
-1 x GAL16V8 (Microchip (Atmel) or New old stock from eBay, Aliexpress or UTSource)
-1 x 0.22uF capacitor
-2 x 7 segment displays COMMON ANODE
-14 x 390 ohm resistors
-2 x 2N3906 general purpose PNP transistors
-2 x 1K8 resistors
-A clock source (to alternate the displays by turning on the transistors one at a time) - something > 100Hz
-1 x 74LS373 8-bit buffer (optional - see below)
+* 1 x GAL16V8 (Microchip (Atmel) or New old stock from eBay, Aliexpress or UTSource)
+* 1 x 0.22uF capacitor
+* 2 x 7 segment displays COMMON ANODE
+* 14 x 390 ohm resistors
+* 2 x 2N3906 general purpose PNP transistors
+* 2 x 1K8 resistors
+* A clock source (to alternate the displays by turning on the transistors one at a time) - something > 100Hz
+* 1 x 74LS373 8-bit buffer (optional - see below)
 
 You will also need a GAL programmer (the TL866 can do it - that's what I use). Use the .JED file here as the source for the programmer. If you want to edit/change the source PLD file, you will need a copy of WinCUPL (free from https://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/wincupl) or another CUPL editor.
 
