@@ -16,7 +16,7 @@ There is support circuitry needed to make the whole unit and a schematic and fur
 * A clock source (to alternate the displays by turning on the transistors one at a time) - something > 100Hz
 * 1 x 74LS373 8-bit buffer (optional - see below)
 
-You will also need a GAL programmer (the TL866 can do it - that's what I use). Use the .JED file here as the source for the programmer. If you want to edit/change the source PLD file, you will need a copy of WinCUPL (free from https://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/wincupl) or another CUPL editor.
+You will also need a GAL programmer (the TL866 can do it - that's what I use. IMPORTANT: Untick 'Encrypt Ch' otherwise the GAL may not program correctly.). Use the .JED file here as the source for the programmer. If you want to edit/change the source PLD file, you will need a copy of WinCUPL (free from https://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/wincupl) or another CUPL editor.
 
 The general wiring is as follows (you can extrapolate from the .PLD file too - it's  plain text file with more info)..
 
