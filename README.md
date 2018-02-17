@@ -1,11 +1,11 @@
 # GALBinaryTo7Seg
-8 bit binary displayed as hex on two 7 segment displays (a bus monitor)
+**8 bit binary displayed as hex on two 7 segment displays (a bus monitor)**
 
 ** This write-up is  work in progress - more details to follow **
 
 This CUPL code programs a GAL16V8 to drive two COMMON ANODE 7 segment displays so that they display the hex representation of the 8-bit input in real time (no clocking-in or latching). This is ideal for monitoring 8-bit buses in real time - the GAL logic cells effectively act as a fast look-up table running at the nS level - unlike a microcontroller, which would respond at the mSec/uSec level. 
 
-There is support circuitry needed to make the whole unit and a schematic and further instrustions will be posted later, but in summary (in case you want to work it out for yourself!), you will need:
+There is support circuitry needed to make the whole unit and a schematic and further instructions will be posted later, but in summary (in case you want to work it out for yourself!), you will need:
 
 1 x GAL16V8 (Microchip (Atmel) or New old stock from eBay, Aliexpress or UTSource)
 1 x 0.22uF capacitor
