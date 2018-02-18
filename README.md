@@ -11,7 +11,7 @@ There is support circuitry needed to make the whole unit; there's a schematic an
 * 14 x 390 ohm resistors
 * 2 x 2N3906 general purpose PNP transistors
 * 2 x 1K8 resistors
-* A clock source (to alternate the displays by turning on the transistors one at a time) - something > 100Hz. This could be a 555 timer or (more easily) an 8-pin microcontroller. 
+* A clock source (to alternate the displays by turning on the transistors one at a time) - something > 100Hz. This could be a 555 timer or (more easily) an 8-pin microcontroller. See galclk.c (and .hex) for some C code to use an 8-pin PIC as a 100Hz clock. The .hex file is the compiled code, ready to program a PIC.
 * 1 x 74LS373 8-bit buffer (optional - see below)
 
 You will also need a GAL programmer (the TL866 can do it - that's what I use. IMPORTANT: Untick 'Encrypt Ch' otherwise the GAL may not program correctly.). Use the .JED file here as the source for the programmer. If you want to edit/change the source PLD file, you will need a copy of WinCUPL (free from https://www.microchip.com/design-centers/programmable-logic/spld-cpld/tools/software/wincupl) or another CUPL editor.
