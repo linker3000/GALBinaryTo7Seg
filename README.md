@@ -5,6 +5,8 @@ This CUPL code programs a GAL16V8 to drive two COMMON ANODE 7 segment displays s
 
 There is support circuitry needed to make the whole unit; there's a schematic and further instructions below.
 
+Although the GAL is officially a 5V part, the test circuit seemed to run OK on 3.3V. That was without a 74XX373 latch. A 74Hx/xx part may work (not tested). YMMV.
+
 * 1 x GAL16V8 (Microchip (Atmel) or New old stock from eBay, Aliexpress or UTSource etc.)
 * 1 x 0.22uF capacitor
 * 2 x 7 segment displays COMMON ANODE
