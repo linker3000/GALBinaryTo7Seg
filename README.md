@@ -31,4 +31,10 @@ The general wiring is as follows (you can extrapolate from the .PLD and .DOC fil
 
 If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip will free-run (no clock needed), but will freeze its output when pin 11 ('C') is taken low - so you can use this as a trigger to halt the display if you need to check a value at a specific time.
 
+**Schematic:**
+
 ![Image](gal-7seg.png)
+
+**Prototype** (stripboard and wire wrap):
+
+![Image](bin2x7segboard.jpg)
