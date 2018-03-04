@@ -27,9 +27,9 @@ The general wiring is as follows (you can extrapolate from the .PLD and .DOC fil
 * For correct operation, GND on this circuit needs to be connected to GND on the circuit/board where the bus is being monitored.
 * The board connector includes a 5V line and jumper to allow it to be powered from the circuit/board where the bus is being monitored. ONLY use one 5V power source (hence the jumper).
 
-**Optional extra - 74LS373**
+**Optional extra - 74x373**
 
-If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip will free-run (no clock needed), but will freeze its output when pin 11 ('C') is taken low - so you can use this as a trigger to halt the display if you need to check a value at a specific time.
+If you feed the 8-bit input to the GAL through a 74LS373/74F373 TTL 8-bit latch, this chip will free-run (no clock needed), but will freeze its output when pin 11 ('C') is taken low - so you can use this as a trigger to halt the display if you need to check a value at a specific time.
 
 **Schematic:**
 
@@ -39,3 +39,5 @@ If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip 
 
 ![Image](bin2x7segboard2.jpg)
 *Finished board, including USB power connector and 74F373 input latch, being exercised by a third-party 'Arduino'*
+
+NB: There's a 6K8 pullup resistor on the 74F373 pin 11 (not shown on current schematic)
