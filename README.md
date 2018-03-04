@@ -38,4 +38,4 @@ If you feed the 8-bit input to the GAL through a 74LS373 8-bit latch, this chip 
 **Prototype** (stripboard and wire wrap):
 
 ![Image](bin2x7segboard2.jpg)
-*Finished board, including USB power connector and 74F373 input latch*
+*Finished board, including USB power connector and 74F373 input latch, being exercised by a third-party 'Arduino'*
