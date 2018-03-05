@@ -50,4 +50,4 @@ If the 8-bit input to the GAL is fed through a 74LS373/74F373 TTL 8-bit latch, t
 **Prototype** (stripboard and wire wrap):
 
 ![Image](bin2x7segboard2.jpg)
-*Finished board, including USB power connector and 74F373 input latch, being exercised by a third-party 'Arduino'. Wirewrapping allows the chip interconnects to be made without needing a much larger board, or a mass of signal routing with enamelled copper (magnet) wire.
+*Finished board, including USB power connector and 74F373 input latch, being exercised by a third-party 'Arduino'. Wirewrapping allows the chip interconnects to be made without needing a much larger board, or a mass of signal routing with enamelled copper (magnet) wire.*
