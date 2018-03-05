@@ -35,7 +35,7 @@ The general wiring is as follows (you can extrapolate from the .PLD and .DOC fil
 * The 8-bit binary is input on GAL pins 1-8 (5V TTL level)
 * The clock that toggles the PNP transistors is input on GAL pin 9. 
 * An inverse of this clock is output from GAL pin 12.
-* The 7 segment outputs (in standard nomenclature for segments a-g) are output from GA pins 19 back to 13
+* The 7 segment outputs (in standard nomenclature for segments a-g) are output from GAL pins 19 back to 13
 * For correct operation, GND on this circuit needs to be connected to GND on the circuit/board where the bus is being monitored.
 * The board connector includes a 5V line and jumper to allow it to be powered from the circuit/board where the bus is being monitored. ONLY use one 5V power source (hence the jumper).
 
