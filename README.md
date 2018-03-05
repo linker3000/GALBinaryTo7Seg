@@ -22,7 +22,7 @@ The prototype was powered from a 5V USB hub - max current consumption for the fu
 * A clock source (to alternate the displays by turning on the transistors one at a time) - something >= 100Hz. This could be a 555 timer or (more easily) an 8-pin microcontroller. See galclk.c (and .hex) for some C code to use an 8-pin PIC12F675 as a 100Hz clock. The .hex file is the compiled code, ready to program a PIC.
 
 *For the optional latch (optional - see below)*
-* 1 x 74LS373 or 74F373 TTL 8-bit octal transparent latch. 74HC (CMOS logic levels) or 74HCT (TTL logic levels) CMOS parts could be used, but beware that the inputs on these chips are less tolerant of static eletricity.
+* 1 x 74LS373 or 74F373 TTL 8-bit octal transparent latch. 74HC (CMOS logic levels) or 74HCT (TTL logic levels) CMOS parts could be used, but beware that the inputs on these chips are less tolerant of static electricity.
 * 1 x 0.1uF capacitor
 * 1 x 6K8 resistor
 
