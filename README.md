@@ -1,7 +1,9 @@
 # GALBinaryTo7Seg
 **8 bit binary displayed as hex on two 7 segment displays (a bus monitor)**
 
-There's a few chips still available (CMOS/HCT 4511, 74x47/48 and 74247), that will decode 4 bits and show 0-9 (BCD = Binary Coded Decimal) on a 7-segment LED display, but ones that show 0-F (hexadecimal) are very rare. This circuit and CUPL code uses a GAL16V8 programmable logic device (PLD) to drive two COMMON ANODE 7 segment displays so that they display the hex representation of the 8-bit input in real time (no clocking-in or latching); this is ideal for monitoring 8-bit buses on microprocessor and microcontroller circuits. The GAL logic cells effectively act as a fast look-up table running at the nS level - unlike a microcontroller, which would respond at the uSec-mSec level. There's a full circuit schematic and further instructions below.
+There's a few chips still available (CMOS/HCT 4511, 74x47/48 and 74247) that will decode 4 bits and show 0-9 (BCD = Binary Coded Decimal) on a 7-segment LED display, but ones that support 0-F (hexadecimal) are very rare. This circuit and CUPL code uses a GAL16V8 programmable logic device (PLD) to drive two COMMON ANODE 7 segment displays so that they display the hex representation of the 8-bit input in real time (no clocking-in or latching); this is ideal for monitoring 8-bit buses on microprocessor and microcontroller circuits. The GAL logic cells effectively act as a fast look-up table running at the nS level - unlike a microcontroller, which would respond at the uSec-mSec level. There's a full circuit schematic and further instructions below.
+
+To drive two 7-segment displays from the GAL, pin 9 is defined as an input and fed with a 100Hz (approx) square wave (see below) to determine which 4 of the 8 input bits should be sampled. This signal, together with its inverted copy on pin 12 also turns on/off the PNP transistors connected to the power pins on the LED displays so that only one is on at any time. This arrangement allows the GAL to work with two 7-segment displays.
 
 Although the GAL is officially a 5V part, the test circuit seemed to run OK on 3.3V. (That was without the additional, optional latch). YMMV. 
 
@@ -19,7 +21,7 @@ The prototype was powered from a 5V USB hub - max current consumption for the fu
 * 7 x 390 ohm resistors
 * 2 x 2N3906 general purpose PNP transistors
 * 2 x 1K8 resistors
-* A clock source (to alternate the displays by turning on the transistors one at a time) - something >= 100Hz. This could be a 555 timer or (more easily) an 8-pin microcontroller. See galclk.c (and .hex) for some C code to use an 8-pin PIC12F675 as a 100Hz clock. The .hex file is the compiled code, ready to program a PIC.
+* A clock source (to control the displays by turning on the transistors one at a time) - something >= 100Hz. This could be a 555 timer or (more easily) an 8-pin microcontroller. See galclk.c (and .hex) for some C code to use an 8-pin PIC12F675 as a 100Hz clock. The .hex file is the compiled code, ready to program a PIC.
 
 *For the optional latch - see below*
 * 1 x 74LS373 or 74F373 TTL 8-bit octal transparent latch. 74HC (CMOS logic levels) or 74HCT (TTL logic levels) CMOS parts could be used, but beware that the inputs on these chips are less tolerant of static electricity.
