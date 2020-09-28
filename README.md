@@ -1,7 +1,7 @@
 # GALBinaryTo7Seg
 **8 bit binary displayed as hex on two 7 segment displays (a bus monitor)**
 
-This circuit and CUPL code uses a GAL16V8 programmable logic device (PLD) to drive two COMMON ANODE 7 segment displays so that they display the hex representation of the 8-bit input in real time (no clocking-in or latching); this is ideal for monitoring 8-bit buses on microprocessor and microcontroller circuits. The GAL logic cells effectively act as a fast look-up table running at the nS level - unlike a microcontroller, which would respond at the uSec-mSec level. There's a full circuit schematic and further instructions below.
+There's a few chips still available (CMOS/HCT 4511, 74x47/48 and 74247), that will decode 4 bits and show 0-9 (BCD = Binary Coded Decimal) on a 7-segment LED display, but ones that show 0-F (hexadecimal) are very rare. This circuit and CUPL code uses a GAL16V8 programmable logic device (PLD) to drive two COMMON ANODE 7 segment displays so that they display the hex representation of the 8-bit input in real time (no clocking-in or latching); this is ideal for monitoring 8-bit buses on microprocessor and microcontroller circuits. The GAL logic cells effectively act as a fast look-up table running at the nS level - unlike a microcontroller, which would respond at the uSec-mSec level. There's a full circuit schematic and further instructions below.
 
 Although the GAL is officially a 5V part, the test circuit seemed to run OK on 3.3V. (That was without the additional, optional latch). YMMV. 
 
