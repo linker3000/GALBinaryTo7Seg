@@ -39,7 +39,7 @@
 
 void main() {
   TRISIO = 0; // Set all I/O as output
-  ANSEL = 0;  // Set all pints to digital
+  ANSEL = 0;  // Set all pins to digital
   while(1)
   {
     GPIO = (1<<4); // GP4 (12F675 pin 3) ON
